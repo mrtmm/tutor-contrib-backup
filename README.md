@@ -32,6 +32,7 @@ If you are installing this plugin from a branch in this Git repository, you must
 | Sumac             | `>=19.0, <20`      | `main`        | `>=4.1.0`      |
 | Teak              | `>=20.0, <21`      | `main`        | `>=4.4.0`      |
 | Ulmo              | `>=21.0, <22`      | `main`        | `>=4.5.0`      |
+| Verawood          | `>=22.0, <23`      | `main`        | `>=4.6.0`      |
 
 [^v1]: For Open edX Maple and Tutor 13, you must run version 13.3.0 or later.
        That is because this plugin uses the Tutor v1 plugin API, [which was introduced with that release](https://github.com/overhangio/tutor/blob/master/CHANGELOG.md#v1320-2022-04-24).
