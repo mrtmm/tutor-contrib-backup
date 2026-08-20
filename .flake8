@@ -1,0 +1,3 @@
+[flake8]
+ignore = E124,W504
+exclude = .svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg,src,tests/tutor-sandbox/env

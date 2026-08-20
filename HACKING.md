@@ -74,6 +74,6 @@ Then, build a new `sdist` package, and [upload it to PyPI](https://packaging.pyt
 
 ```bash
 rm dist/* -f
-./setup.py sdist
+python -m build
 twine upload dist/*
 ```

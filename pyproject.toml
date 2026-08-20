@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=61", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tutor-contrib-backup"
+dynamic = ["version"]
+description = "Backup plugin for Tutor"
+readme = "README.md"
+license = {text = "AGPLv3"}
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "tutor>=16.0.0,<23",
+]
+
+[project.urls]
+Homepage = "https://github.com/cleura/tutor-contrib-backup"
+Issues = "https://github.com/cleura/tutor-contrib-backup/issues"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["tutorbackup", "tutorbackup.patches", "tutorbackup.templates"]
+
+[project.entry-points."tutor.plugin.v1"]
+backup = "tutorbackup.plugin"
+
+[tool.setuptools_scm]
+
+[tool.bumpversion]
+commit = true
+current_version = "4.5.0"
+message = "build: Version {new_version}"
+tag = true
+
+[[tool.bumpversion.files]]
+filename = "README.md"
+
+[[tool.bumpversion.files]]
+filename = "CHANGELOG.md"
+search = "Unreleased"
+replace = "Version {new_version} ({now:%Y-%m-%d})"
+
+[tool.tox]
+envlist = ["gitlint", "flake8"]
+skip_missing_interpreters = true
+
+[tool.tox.env.default]
+setenv = ["TUTOR_ROOT=tests/tutor-sandbox"]
+commands = [
+   ["tutor", "plugins", "enable", "backup"],
+   ["tutor", "plugins", "list"],
+]
+
+[tool.tox.env.gitlint]
+skip_install = true
+deps = ["gitlint"]
+commands = [["gitlint"]]
+
+[tool.tox.env.flake8]
+skip_install = true
+deps = ["flake8"]
+commands = [["flake8"]]
+
+[tool.tox.env.bumpversion]
+skip_install = true
+passenv = ["HOME", "GPG_AGENT_INFO"]
+deps = ["bump-my-version"]
+commands = [["bump-my-version", "bump", { replace = "posargs", extend = true} ]]
