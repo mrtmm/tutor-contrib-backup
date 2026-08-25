@@ -44,7 +44,7 @@ If you are installing this plugin from a branch in this Git repository, you must
 ## Installation
 
 ```bash
-pip install git+https://github.com/cleura/tutor-contrib-backup@v4.5.0
+pip install git+https://github.com/cleura/tutor-contrib-backup@v4.6.0
 ```
 
 ## Usage
@@ -72,7 +72,7 @@ In this case, this plugin will push the `backup` image to your previously config
 2. You override just the `BACKUP_DOCKER_IMAGE` configuration value, for example:
 
    ```bash
-   tutor config save --set BACKUP_DOCKER_IMAGE=localhost:5000/backup:v4.5.0
+   tutor config save --set BACKUP_DOCKER_IMAGE=localhost:5000/backup:v4.6.0
    ```
 
    Substitute the correct registry prefix if, rather than using a local instance of the [Distribution Registry](https://github.com/distribution/distribution), you are using a container registry provided by [GitHub](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [GitLab](https://docs.gitlab.com/ee/user/packages/container_registry/), [Harbor](https://goharbor.io/), etc.
@@ -198,7 +198,7 @@ This prevents your users from encountering errors during the restore process.
 ### General options
 
 * `BACKUP_BASE_IMAGE` (default: `docker.io/ubuntu:22.04`)
-* `BACKUP_DOCKER_IMAGE` (default: `<DOCKER_REGISTRY>backup:v4.5.0`, relative to `DOCKER_REGISTRY` as defined by the global Tutor option)
+* `BACKUP_DOCKER_IMAGE` (default: `<DOCKER_REGISTRY>backup:v4.6.0`, relative to `DOCKER_REGISTRY` as defined by the global Tutor option)
 
 ### Kubernetes options
 

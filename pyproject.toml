@@ -39,7 +39,7 @@ backup = "tutorbackup.plugin"
 
 [tool.bumpversion]
 commit = true
-current_version = "4.5.0"
+current_version = "4.6.0"
 message = "build: Version {new_version}"
 tag = true
 
